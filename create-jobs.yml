@@ -1,10 +1,13 @@
 - name: Create Jenkins Jobs
   hosts: localhost
   connection: local
+  vars:
+    sjobs:
+      - { git_url:https://github.com/jkesarwani123/roboshop-jenkins.git }
   tasks:
     - name: Create a jenkins job using basic authentication
       community.general.jenkins_job:
-        config: "{{ lookup('file', 'test.xml') }}"
+        config: "{{ lookup('file', 'jobs.xml') }}"
         name: create jenkins job from ansible
         password: admin123
         url: http://172.31.3.101:8080
