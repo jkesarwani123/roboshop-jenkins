@@ -5,19 +5,5 @@
     sjobs:
       - { git_url:https://github.com/jkesarwani123/roboshop-ansible.git, job_name: roboshop-ansible-seed }
       - { git_url:https://github.com/jkesarwani123/project-terra.git, job_name: roboshop-terraform-seed }
-  tasks:
-    - name: Create Job Block
-      loop: "{{sjobs}}"
-      block:
-        - name: Copy XML file
-          ansible.builtin.template:
-            src: test.xml
-            dest: /tmp/test.xml
-
-        - name: Create a jenkins job using basic authentication
-          community.general.jenkins_job:
-            config: "{{ lookup('file', 'test.xml') }}"
-            name: "{{item.job_name}}"
-            password: admin123
-            url: http://172.31.3.101:8080
-            user: admin
+  roles:
+    - jenkins
