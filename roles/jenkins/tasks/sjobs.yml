@@ -5,6 +5,7 @@
     password: admin123
     url: http://172.31.3.101:8080
   register: jenkins_job_status
+  ignore_errors: true
 
 - name: Copy XML file
   ansible.builtin.template:
