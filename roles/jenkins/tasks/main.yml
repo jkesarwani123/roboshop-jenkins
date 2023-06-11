@@ -1,4 +1,4 @@
 - name: Include tasks in play
   ansible.builtin.include_tasks:
-    file: sjob.yml
+    file: sjobs.yml
   loop: "{{sjobs}}"
