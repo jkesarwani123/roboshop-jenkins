@@ -2,3 +2,6 @@ sjobs:
   - { git_url: https://github.com/jkesarwani123/roboshop-ansible.git, job_name: roboshop-ansible-seed }
   - { git_url: https://github.com/jkesarwani123/project-INFRA.git, job_name: roboshop-INFRA-terraform-seed }
   - { git_url: https://github.com/jkesarwani123/aws-parameter-store.git, job_name: roboshop-aws-parameters-seed }
+
+mjobs:
+  - { git_url: https://github.com/jkesarwani123/cart.git, job_name: cart }
