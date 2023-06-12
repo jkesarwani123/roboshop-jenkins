@@ -6,6 +6,9 @@ def call() {
                 label 'workspace'
             }
         }
+        options {
+            ansiColor('xterm')
+        }
         parameters {
             choice(name: 'env', choices: ['dev', 'prod'], description: 'Environment')
             choice(name: 'action', choices: ['apply', 'destroy'], description: 'Build/Destroy')
